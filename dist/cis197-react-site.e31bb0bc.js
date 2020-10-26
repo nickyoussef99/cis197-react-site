@@ -35965,8 +35965,9 @@ var TopImage = function TopImage(_ref) {
 };
 
 var mapStateToProps = function mapStateToProps(state) {
-  var topImg = state.topImg,
-      topDesc = state.topDesc;
+  var _state$top = state.top,
+      topImg = _state$top.topImg,
+      topDesc = _state$top.topDesc;
   console.log("IMG: ".concat(topImg, ", Desc: ").concat(topDesc));
   console.log("State: ".concat(state, ", ").concat(state.topDesc));
   return {
@@ -36220,7 +36221,7 @@ function _extends() { _extends = Object.assign || function (target) { for (var i
 
 var BlogList = function BlogList(_ref) {
   var blogs = _ref.blogs;
-  return /*#__PURE__*/_react.default.createElement("ul", null, blogs.map(function (blog) {
+  return /*#__PURE__*/_react.default.createElement("div", null, blogs.map(function (blog) {
     return /*#__PURE__*/_react.default.createElement(_BlogItem.default, _extends({
       key: blog.id
     }, blog));
@@ -36228,7 +36229,7 @@ var BlogList = function BlogList(_ref) {
 };
 
 var mapStateToProps = function mapStateToProps(state) {
-  var blogs = state.blogs;
+  var blogs = state.blog.blogs;
   return {
     blogs: blogs
   };
@@ -36337,7 +36338,7 @@ var Blog = function Blog(_ref) {
 };
 
 var mapStateToProps = function mapStateToProps(state) {
-  var addFormVisible = state.addFormVisible;
+  var addFormVisible = state.blog.addFormVisible;
   return {
     addFormVisible: addFormVisible
   };
@@ -36395,11 +36396,6 @@ function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (O
 function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
-
-var initialState = {
-  addFormVisible: false,
-  blogs: []
-};
 
 var top = function top() {
   var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : initialState;
@@ -36510,10 +36506,10 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 var rootReducer = (0, _redux.combineReducers)({
   top: _top.default,
   blog: _blog.default
-}); //export default rootReducer
-//export default top
+});
+var _default = rootReducer; //export default top
+//export default blog
 
-var _default = _blog.default;
 exports.default = _default;
 },{"redux":"node_modules/redux/es/redux.js","./top":"src/reducers/top.js","./blog":"src/reducers/blog.js"}],"index.js":[function(require,module,exports) {
 "use strict";

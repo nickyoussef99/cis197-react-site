@@ -18,7 +18,7 @@ const Blog = ( { addFormVisible } ) => {
 }
 
 const mapStateToProps = state => {
-    const { addFormVisible } = state
+    const { addFormVisible } = state.blog
     return { addFormVisible: addFormVisible }
 }
   

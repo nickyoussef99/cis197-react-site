@@ -5,19 +5,19 @@ import { connect } from 'react-redux'
 
 const BlogList = ( { blogs } ) => {
     return (
-        <ul> 
+        <div> 
             {blogs.map(blog =>
                 <BlogItem
                 key={blog.id}
                 {...blog}
             />
             )}
-        </ul>
+        </div>
     )
 }
 
 const mapStateToProps = state => {
-    const { blogs } = state
+    const { blogs } = state.blog
     return {blogs: blogs}
 }
   

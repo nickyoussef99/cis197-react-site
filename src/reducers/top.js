@@ -1,8 +1,3 @@
-let initialState = {
-  addFormVisible: false,
-  blogs: []
-}
-
 const top = (state = initialState, action) => {
     const { type, text } = action 
     console.log(state)

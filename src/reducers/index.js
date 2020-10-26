@@ -5,7 +5,7 @@ import blog from './blog'
 
 const rootReducer = combineReducers ({top, blog})
 
-//export default rootReducer
+export default rootReducer
 //export default top
-export default blog
+//export default blog
 

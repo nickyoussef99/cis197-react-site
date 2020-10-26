@@ -27,7 +27,7 @@ const TopImage = ({ topImg, topDesc }) => {
 }
 
 const mapStateToProps = state => {
-  let { topImg, topDesc } = state
+  let { topImg, topDesc } = state.top
   console.log(`IMG: ${topImg}, Desc: ${topDesc}`)
   console.log(`State: ${state}, ${state.topDesc}`)
   return { topImg: topImg, topDesc: topDesc}
