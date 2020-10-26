@@ -1,15 +1,47 @@
-import React from "react";
+import React from 'react'
+import { connect } from 'react-redux'
 
-const TopForm = () => {
-    let input
-    return (
-    <header className="component-top-form">
-        <div class="form-group">
-        <label for="exampleInputEmail1">Image</label>
-        <input class="form-control" placeholder="Enter image url" value="" ref={node => input = node} ></input>
-        </div>
-    </header>
-    )
+import { setTopDesc, setTopImage } from '../actions'
+
+const TopForm = ({ setTopDesc, setTopImage }) => {
+  let inputDesc
+  let inputImg
+
+  return (
+    <div>
+      <form onSubmit={e => {
+        e.preventDefault()
+        if (!inputImg.value.trim()) {
+          return
+        }
+        setTopImage(inputImg.value)
+        inputImg.value = ''
+      }}>
+        <input ref={node => inputImg = node} />
+        <button type="submit">
+          Add ImageUrl
+        </button>
+      </form>
+      <form onSubmit={e => {
+        e.preventDefault()
+        if (!inputDesc.value.trim()) {
+          return
+        }
+        setTopDesc(inputDesc.value)
+        inputDesc.value = ''
+      }}>
+        <input ref={node => inputDesc = node} />
+        <button type="submit">
+          Add Image Description
+        </button>
+      </form>
+    </div>
+  )
 }
 
-export default TopForm
+const mapDispatchToProps = dispatch => ({
+  setTopImage: text => dispatch(setTopImage(text)),
+  setTopDesc: text => dispatch(setTopDesc(text))
+})
+
+export default connect(null, mapDispatchToProps)(TopForm)

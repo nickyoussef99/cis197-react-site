@@ -1,16 +1,36 @@
 import React from "react";
+import { connect } from 'react-redux'
+import styled from 'styled-components'
 
-const TopImage = () => {
+const Wrapper = styled.div`
+  margin-left: 'auto';
+  margin-right: 'auto';
+  text-align: "center";
+`;
+
+const IMG = styled.img`
+  margin-left: auto;
+  margin-right:auto;
+`;
+
+const TopImage = ({ topImg, topDesc }) => {
   return (
-  <header className="component-top-image">
-    <img
+  <Wrapper>
+    <IMG
       className="img-fluid"
-      src="https://static.boredpanda.com/blog/wp-content/uploads/2017/12/funny-weird-wtf-stock-photos-19-5a3926af95d9d__700.jpg"
-      height="400px"
+      src= { topImg }
+      height="200px"
     />
-    <h3>Description goes here</h3>
-  </header>
+    <h3>{topDesc}</h3>
+  </Wrapper>
   )
 }
 
-export default TopImage
+const mapStateToProps = state => {
+  let { topImg, topDesc } = state
+  console.log(`IMG: ${topImg}, Desc: ${topDesc}`)
+  console.log(`State: ${state}, ${state.topDesc}`)
+  return { topImg: topImg, topDesc: topDesc}
+}
+
+export default connect(mapStateToProps)(TopImage)
