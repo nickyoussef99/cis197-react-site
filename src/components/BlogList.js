@@ -5,14 +5,14 @@ import { connect } from 'react-redux'
 
 const BlogList = ( { blogs } ) => {
     return (
-        <div> 
+        <ul> 
             {blogs.map(blog =>
                 <BlogItem
                 key={blog.id}
                 {...blog}
             />
             )}
-        </div>
+        </ul>
     )
 }
 

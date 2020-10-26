@@ -3,7 +3,7 @@ import { connect } from 'react-redux'
 
 import { addBlog, toggleAddForm } from '../actions'
 
-const AddBlogForm = ({ addBlog }) => {
+const AddBlogForm = ({ addBlog, toggleForm }) => {
   let title
   let url
   let text
@@ -26,11 +26,16 @@ const AddBlogForm = ({ addBlog }) => {
         <input ref={node => text = node} />
       </form>
       <button className="btn btn-success" onClick = {e => {
+          e.preventDefault()
+          if (!title.value.trim() && !url.value.trim() && !text.value.trim()) {
+            return
+          }
           addBlog(url, title, text)
-          toggleForm()
+          //toggleForm()
       }}>Add</button>
       <button className="btn btn-info" onClick = {e => {
-          toggleForm()
+          e.preventDefault()
+          //toggleForm()
       }}>Cancel</button>
     </div>
   )

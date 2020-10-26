@@ -5,12 +5,13 @@ const initialState = {
 
 const blog = (state = initialState, action) => {
     const { type, id, url, title, text } = action
-  
+    console.log(state.blogs)
+    console.log("in the blog reducer")
     switch (type) {
       case 'ADD_BLOG':
         return {
             ...state,
-            blogs: [...blogs, { url, id, title, text }]
+            blogs: [...state.blogs, { url, id, title, text }]
         }
       case 'TOGGLE_ADD_FORM':
           return {

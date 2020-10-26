@@ -1,11 +1,12 @@
 import React from 'react'
 import styled from 'styled-components'
 
-const BlogItem = ( { blogImg, id,  title, text} ) => {
+
+const BlogItem = ( { url, id,  title, text} ) => {
     return (
         <div>
             <img 
-                src={blogImg} 
+                src={url} 
                 height = "100px"/>
             <h2> Blog #{id}: { title } </h2>
             <p> {text} </p>
