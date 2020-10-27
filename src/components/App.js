@@ -1,7 +1,6 @@
 import React from "react"
 import Header from "./Header"
-import TopImage from "./TopImage"
-import TopForm from "./TopForm"
+import Top from './Top'
 import Blog from "./Blog"
 
 const Container = ({ children }) => (
@@ -13,8 +12,7 @@ const App = () => {
     return(
         <Container>
             <Header/>
-            <TopImage/>
-            <TopForm/>
+            <Top/>
             <Blog/>
         </Container>
     )

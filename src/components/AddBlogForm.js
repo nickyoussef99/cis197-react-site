@@ -30,12 +30,12 @@ const AddBlogForm = ({ addBlog, toggleForm }) => {
           if (!title.value.trim() && !url.value.trim() && !text.value.trim()) {
             return
           }
-          addBlog(url, title, text)
-          //toggleForm()
+          addBlog(url.value, title.value, text.value)
+          toggleForm(false)
       }}>Add</button>
       <button className="btn btn-info" onClick = {e => {
           e.preventDefault()
-          //toggleForm()
+          toggleForm(false)
       }}>Cancel</button>
     </div>
   )
@@ -43,7 +43,7 @@ const AddBlogForm = ({ addBlog, toggleForm }) => {
 
 const mapDispatchToProps = dispatch => ({
   addBlog: (url, title, text) => dispatch(addBlog(url, title, text)),
-  toggleForm: () => dispatch(toggleAddForm())
+  toggleForm: vis => dispatch(toggleAddForm(vis))
 })
 
 export default connect(null, mapDispatchToProps)(AddBlogForm)

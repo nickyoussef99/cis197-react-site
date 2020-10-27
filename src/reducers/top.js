@@ -1,11 +1,21 @@
-const top = (state = initialState, action) => {
-    const { type, text } = action 
-    console.log(state)
+const initialState = {
+  topFormVisible: false,
+  topDesc: "",
+  topImg: ""
+}
+const top = (state = {}, action) => {
+    const { type, text, visible } = action 
+    console.log(`Visible: ${visible}`)
     switch (type) {
       case 'SET_TOP_DESC':
         return {
             ...state,
           topDesc: text
+        }
+      case 'TOGGLE_TOP_FORM':
+        return {
+          ...state,
+          topFormVisible: visible
         }
       case 'SET_TOP_IMG':
         return {

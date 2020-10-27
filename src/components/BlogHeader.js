@@ -19,7 +19,7 @@ const Wrapper = styled.div`
   display: 'flex';
 `;
 
-const BlogHeader = ( { toggleForm } ) => {
+const BlogHeader = ( { toggleAddForm } ) => {
   return (
     <Wrapper>
         <Title>
@@ -27,14 +27,14 @@ const BlogHeader = ( { toggleForm } ) => {
         </Title>
         <AddButton onClick = {e => {
           e.preventDefault()
-          toggleAddForm()
+          toggleAddForm(true)
       }}> Add Post</AddButton>
     </Wrapper>
   )
 }
 
 const mapDispatchToProps = dispatch => ({
-    toggleAddForm: () => dispatch(toggleAddForm())
+    toggleAddForm: visible => dispatch(toggleAddForm(visible))
 })
   
 export default connect(null, mapDispatchToProps)(BlogHeader)
