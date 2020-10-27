@@ -1,7 +1,7 @@
-import React from "react";
-import styled from 'styled-components'
-import { connect } from 'react-redux'
-import { toggleTopForm } from '../actions'
+import React from 'react';
+import styled from 'styled-components';
+import { connect } from 'react-redux';
+import { toggleTopForm } from '../actions';
 
 const Title = styled.h1`
   font-size: 2em;
@@ -14,20 +14,21 @@ const Wrapper = styled.section`
   background: papayawhip;
 `;
 
-const Header = ({ toggleForm }) => {
-  return(
+const Header = ({ toggleForm }) => (
   <Wrapper>
     <Title>Welcome to my website! </Title>
-    <button onClick = {e => {
-          e.preventDefault()
-          toggleForm(true)
-      }}>Edit Intro</button>
+    <button onClick={(e) => {
+      e.preventDefault();
+      toggleForm(true);
+    }}
+    >
+      Edit Intro
+    </button>
   </Wrapper>
-  )
-}
+);
 
-const mapDispatchToProps = dispatch => ({
-  toggleForm: visible => dispatch(toggleTopForm(visible))
-})
+const mapDispatchToProps = (dispatch) => ({
+  toggleForm: (visible) => dispatch(toggleTopForm(visible)),
+});
 
-export default connect(null, mapDispatchToProps)(Header)
+export default connect(null, mapDispatchToProps)(Header);

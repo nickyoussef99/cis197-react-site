@@ -25,7 +25,7 @@ const AddBlogForm = ({ addBlog, toggleForm }) => {
       <form>
         <input ref={node => text = node} />
       </form>
-      <button className="btn btn-success" onClick = {e => {
+      <button onClick = {e => {
           e.preventDefault()
           if (!title.value.trim() && !url.value.trim() && !text.value.trim()) {
             return
@@ -33,7 +33,7 @@ const AddBlogForm = ({ addBlog, toggleForm }) => {
           addBlog(url.value, title.value, text.value)
           toggleForm(false)
       }}>Add</button>
-      <button className="btn btn-info" onClick = {e => {
+      <button onClick = {e => {
           e.preventDefault()
           toggleForm(false)
       }}>Cancel</button>

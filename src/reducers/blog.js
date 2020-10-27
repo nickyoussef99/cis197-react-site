@@ -5,11 +5,7 @@ const initialState = {
 }
 
 const blog = (state = initialState, action) => {
-    const { type, id, url, title, text } = action
-    const { visible } = action
-    const { editId } = action
-    console.log(state.blogs)
-    console.log(`URL: ${url}, Title: ${title}, Text: ${text}, VIS: ${visible}`)
+    const { type, id, url, title, text, visible, editId } = action
     switch (type) {
       case 'ADD_BLOG':
         return {

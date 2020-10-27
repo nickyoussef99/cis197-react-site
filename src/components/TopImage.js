@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 import { connect } from 'react-redux'
 import styled from 'styled-components'
 
@@ -17,7 +17,7 @@ const TopImage = ({ topImg, topDesc }) => {
   return (
   <Wrapper>
     <IMG
-      className="img-fluid"
+      className='img-fluid'
       src= { topImg }
       height="200px"
     />
@@ -28,8 +28,6 @@ const TopImage = ({ topImg, topDesc }) => {
 
 const mapStateToProps = state => {
   let { topImg, topDesc } = state.top
-  console.log(`IMG: ${topImg}, Desc: ${topDesc}`)
-  console.log(`State: ${state}, ${state.topDesc}`)
   return { topImg: topImg, topDesc: topDesc}
 }
 

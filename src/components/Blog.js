@@ -1,5 +1,5 @@
-import React from "react"
-import BlogHeader from "./BlogHeader"
+import React from 'react'
+import BlogHeader from './BlogHeader'
 import BlogList from './BlogList'
 import AddBlogForm from './AddBlogForm'
 import { connect } from 'react-redux'

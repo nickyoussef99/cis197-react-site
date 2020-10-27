@@ -1,4 +1,4 @@
-import React from "react"
+import React from 'react'
 import TopImage from './TopImage'
 import TopForm from './TopForm'
 import { connect } from 'react-redux'

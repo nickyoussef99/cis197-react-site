@@ -5,7 +5,6 @@ const initialState = {
 }
 const top = (state = {}, action) => {
     const { type, text, visible } = action 
-    console.log(`Visible: ${visible}`)
     switch (type) {
       case 'SET_TOP_DESC':
         return {

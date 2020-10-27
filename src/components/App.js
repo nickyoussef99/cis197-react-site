@@ -1,12 +1,11 @@
-import React from "react"
+import React from 'react'
 import Header from "./Header"
 import Top from './Top'
-import Blog from "./Blog"
+import Blog from './Blog'
 
 const Container = ({ children }) => (
     <div style={{ paddingLeft: '15%', paddingRight: '15%' }}>{children}</div>
 )
-
 
 const App = () => {
     return(
